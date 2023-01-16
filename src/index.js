@@ -1,13 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const DATA = [
+  { labelText: "ETH Address", id: "input-address", type: "text" },
+  { labelText: "Amount to send", id: "input-amount", type: "text" },
+  { labelText: "OTP Authentication", id: "input-otp", type: "number" },
+];
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <App unitDatas={DATA} />
   </React.StrictMode>
 );
 

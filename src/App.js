@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import FormUnit from "./components/FormUnit";
+import Button from "./components/Button";
+function App(props) {
+  const unitList = props.unitDatas.map((unitData) => (
+    <FormUnit
+      id={unitData.id}
+      labelText={unitData.labelText}
+      type={unitData.type}
+      key={unitData.id}
+    />
+  ));
 
-function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Transaction Form</h1>
+      <form>
+        {unitList}
+        <Button />
+      </form>
     </div>
   );
 }
